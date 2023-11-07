@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
   }
   const container = document.getElementById("container");
   const portal = document.getElementById("portal");
-  const portalID = portal.dataset.portalID;
+  const portalID = portal.dataset.portalid;
   const rooms = ["moon", "sun", "star", "cloud", "satellite"];
   const room = portalID ? portalID : rooms[getRandomInt(0,rooms.length)];
   const chWidth = room.length * 7;
@@ -19,8 +19,10 @@ window.addEventListener("load", () => {
       }
     }
     portal.innerText = rooms[getRandomInt(0,rooms.length)];
-    portal.onclick = () => {
-      const text = `<!doctypehtml><title>text adventure</title><meta charset=utf-8><meta content="width=device-width,initial-scale=1"name=viewport><link href=https://iguannalin.github.io/text-adventure/index.css rel=stylesheet><script src=https://iguannalin.github.io/text-adventure/index.js></script><div id=container></div><div id=overlay><a data-portalid=${room}id=portal></a></div>`;Z
+    portal.onclick = (e) => {
+      e.preventDefault();
+      console.log("clicked", {room})
+      const text = `<!doctypehtml><title>text adventure</title><meta charset=utf-8><meta content="width=device-width,initial-scale=1"name=viewport><link href=https://iguannalin.github.io/text-adventure/index.css rel=stylesheet><script src=https://iguannalin.github.io/text-adventure/index.js></script><div id=container></div><div id=overlay><a data-portalid=${room} id=portal></a></div>`;
       const blob = new Blob([text], {type: "text/html"});
       const blobUrl = URL.createObjectURL(blob);
       window.open(blobUrl, '_blank');
