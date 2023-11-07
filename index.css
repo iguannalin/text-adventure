@@ -33,13 +33,10 @@ body {
   word-break: break-word;
 }
 
-#example-element {
-  float: left;
-  width: 150px;
-  margin: 20px;
-}
-
-.example-container {
-  text-align: left;
-  padding: 20px;
+#overlay {
+  text-align: center;
+  vertical-align: middle;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
 }
