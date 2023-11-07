@@ -28,15 +28,27 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
+  word-break: break-word;
   height: 100vh;
   width: 100vw;
-  word-break: break-word;
 }
 
 #overlay {
-  text-align: center;
-  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
   width: 100vw;
   height: 100vh;
-  position: absolute;
+}
+
+#portal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  width: 20vh;
+  height: 20vh;
+  background-color: var(--main-bg-color);
+  box-shadow: #000000c2 -2px 0px 32px;
 }
