@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
         container.innerHTML += `&nbsp;${room}&nbsp;`;
       }
     }
-    rooms.pop(room);
+    rooms = rooms.filter((el) => el!=room)
     portal.innerText = rooms[getRandomInt(0,rooms.length)];
     portal.onclick = (e) => {
       e.preventDefault();
