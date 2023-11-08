@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
     portal.onclick = (e) => {
       e.preventDefault();
       console.log("clicked", {room})
-      const text = `<!doctypehtml><title>text adventure</title><meta charset=utf-8><meta content="width=device-width,initial-scale=1"name=viewport><link href=https://iguannalin.github.io/text-adventure/index.css rel=stylesheet><script src=https://iguannalin.github.io/text-adventure/index.js></script><div id=container></div><div id=overlay><a data-portalid=${room} id=portal></a></div>`;
+      const text = `<!doctypehtml><title>text adventure</title><meta charset=utf-8><meta content="width=device-width,initial-scale=1"name=viewport><link href=https://iguannalin.github.io/text-adventure/index.css rel=stylesheet><script src=https://iguannalin.github.io/text-adventure/index.js></script><div id=container></div><div id=overlay><a data-portalid=${portal.innerText} id=portal></a></div>`;
       const blob = new Blob([text], {type: "text/html"});
       const blobUrl = URL.createObjectURL(blob);
       window.open(blobUrl, '_blank');
