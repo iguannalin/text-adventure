@@ -22,11 +22,11 @@ window.addEventListener("load", () => {
     portal.innerText = rooms[getRandomInt(0,rooms.length)];
     portal.onclick = (e) => {
       e.preventDefault();
-      console.log("clicked", {room})
+      console.log("clicked", portal.innerText)
       const text = `<!doctypehtml><title>text adventure</title><meta charset=utf-8><meta content="width=device-width,initial-scale=1"name=viewport><link href=https://iguannalin.github.io/text-adventure/index.css rel=stylesheet><script src=https://iguannalin.github.io/text-adventure/index.js></script><div id=container></div><div id=overlay><a data-portalid=${portal.innerText} id=portal></a></div>`;
       const blob = new Blob([text], {type: "text/html"});
       const blobUrl = URL.createObjectURL(blob);
-      window.open(blobUrl, '_blank');
+      window.open(blobUrl, '_self');
       window.URL.revokeObjectURL(blobUrl);
     }
   }
